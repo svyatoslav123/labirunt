@@ -1,5 +1,5 @@
 import pygame
-
+import random
 class Player2:
     def __init__(self, x, y, w, h, img, speed):
         self.photo = pygame.transform.scale(pygame.image.load(img), (w, h))
@@ -14,12 +14,5 @@ class Player2:
 
 
     def move(self):
-        keys = pygame.key.get_pressed()
-        if keys[pygame.K_t]:
-            self.hitbox.y -= self.speed
-        if keys[pygame.K_g]:
-            self.hitbox.y += self.speed
-        if keys[pygame.K_f]:
-            self.hitbox.x += self.speed
-        if keys[pygame.K_h]:
-            self.hitbox.x -= self.speed
+         self.hitbox.x += random.randint(-10, 10)
+         self.hitbox.y += random.randint(-10, 10)
