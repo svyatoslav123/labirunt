@@ -2,8 +2,9 @@ import pygame
 import random
 from hjh import Player
 from dd import Player2
+from finishh import Finish3
 import wall
-
+import finishh
 window = pygame.display.set_mode((700, 500))
 fps = pygame.time.Clock()
 background = pygame.transform.scale(
@@ -28,6 +29,12 @@ walls.append(wall.Wall(200, 350, 500, 20))
 walls.append(wall.Wall(100, 460, 690, 20))
 
 
+finishs = []
+finishs.append(finishh.Finish3(100, 188, 20, 300,"Финиш.png"))
+
+
+
+
 
 game = True
 
@@ -39,9 +46,13 @@ while game:
     for wall in walls:
         if wall.rect.colliderect(roma.hitbox):
             game = False
+    for finishh in finishs:
+        if finishs.rect.colliderect(finiku.hitbox):
+            pygame.draw.rect(window, (0, 255, 0), self.rect)
     window.blit(background, (0, 0))
     roma.move()
     roma.draw(window)
+    finiku.draw(window)
     roma2.move()
     roma2.draw(window)
     for wall in walls:
