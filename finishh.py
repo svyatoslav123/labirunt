@@ -6,7 +6,7 @@ class Finish3:
         self.hitbox = self.photo.get_rect()
         self.hitbox.x = x
         self.hitbox.y = y
-        self.rect = pygame.Rect(x, y, w, h,img)
+        self.rect = pygame.Rect(x, y, w, h)
 
-        def draw(self, window):
-            pygame.draw.rect(window, (255, 255, 0), self.rect)
+    def draw(self, window):
+            pygame.draw.rect(window, (0, 255, 0), self.rect)
